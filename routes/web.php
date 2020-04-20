@@ -14,29 +14,32 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return view('');
+    return view('welcome');
 });
 Route::get('/home', function () {
     return view('myview');
+    // return view('home');
 });
 
+
 // Route::get('users/{id?}', function ($id=3) {
-//    return "hello".$id;
-// });
-
-Route::post('/usersapp', 'formcontroller@submit');
-
-Route::get('/my' , 'Mycontroller@index');
-
-// Rest
-Route::get('/users' , 'myusercontroller@index');
-Route::get('/users/{id}' , 'myusercontroller@show');
-
-Route::post('/users' , 'myusercontroller@store');
-Route::put('/users/update/{id}' , 'myusercontroller@update');
-Route::delete('/users/delete/{id}' , 'myusercontroller@destroy');
-
-
+    //    return "hello".$id;
+    // });
+    
+    Route::post('/usersapp', 'formcontroller@submit');
+    
+    Route::get('/my' , 'Mycontroller@index');
+    
+    // Rest
+    Route::get('/users' , 'myusercontroller@index');
+    Route::get('/users/{id}' , 'myusercontroller@show');
+    
+    Route::post('/users' , 'myusercontroller@store');
+    Route::put('/users/update/{id}' , 'myusercontroller@update');
+    Route::delete('/users/delete/{id}' , 'myusercontroller@destroy');
+    
+    
+    Route::view('/{path?}', 'myview');
 
 // Route::redirect('/home', '/users');
 

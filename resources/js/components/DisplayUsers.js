@@ -10,13 +10,14 @@ class  Users  extends React.Component {
         super(props);
         this.state= {
             users : [],
+            loaded: false 
         }
     }
 
     componentDidMount(){
 
         axios.get( 'users'  )
-        .then( data=> {this.setState( {users : data.data} ) } )
+        .then( data=>  { this.setState( {users : data.data , loaded : true} )   } )
     }
 
     handleUpdate(id){
@@ -37,7 +38,7 @@ class  Users  extends React.Component {
 render(){
     console.log(this.state.users)
 
-   const array_users =   this.state.users.map( e => { 
+   const array_users =    this.state.users.map( e => { 
     
         return    <tr>
              <td> {e.id}  </td>
@@ -48,9 +49,9 @@ render(){
             <button className="btn btn-danger" onClick={ ()=>{this.handleDelete(e.id) }  } >  Delete </button>
          </tr>
         
-         } ) 
+         } )  ;
 
-    return (
+    return ( this.state.loaded ? 
         <div >
             <br></br>
             <br></br><br></br>
@@ -68,10 +69,10 @@ render(){
 
   
   </tr>
-    {array_users}
+    {array_users }
      
     </Table> 
-        </div>
+        </div> : <h1>  Loading  </h1> 
     );
     }
 }

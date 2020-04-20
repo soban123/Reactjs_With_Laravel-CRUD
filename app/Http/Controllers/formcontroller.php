@@ -9,10 +9,10 @@ class formcontroller extends Controller
 
     function submit(Request $request){
 
-        // $request->session()->flash('data' ,'yes');
-        // return redirect('/home');
+        $request->session()->flash('data' ,'yes');
+        return redirect('/home');
        
-            return json_encode('sbs');
+            // return json_encode('sbs');
         }
     
 }
