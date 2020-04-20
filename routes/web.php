@@ -16,10 +16,10 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('myview');
-    // return view('home');
-});
+// Route::get('/home', function () {
+//     return view('myview');
+//     // return view('home');
+// });
 
 
 // Route::get('users/{id?}', function ($id=3) {
@@ -39,7 +39,7 @@ Route::get('/home', function () {
     Route::delete('/users/delete/{id}' , 'myusercontroller@destroy');
     
     
-    Route::view('/{path?}', 'myview');
+    Route::view('/{path?}', 'myview')->middleware('auth');
 
 // Route::redirect('/home', '/users');
 
