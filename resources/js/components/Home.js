@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 function Home() {
     return (
-        <div className="container">
+        <div >
 
             <Header />
             <Switch>

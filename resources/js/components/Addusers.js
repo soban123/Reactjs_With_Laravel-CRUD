@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios'
 import {  Form, FormGroup, Label, Input  } from 'reactstrap';
 
-import './signup.css';
+import './addusers.css';
 
 
 function Addusers(props) {
@@ -40,28 +40,23 @@ function Addusers(props) {
 
     return (
         <div>
-            
-
-            <div className="bg" >
        
-        <h1> Add </h1>
-     </div>
                 
-     <Form md={5} onSubmit={handleSubmit} >
+     <Form md={5} className="form" onSubmit={handleSubmit} >
       
-          
+     <h1 className="center"> Add </h1>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" id="exampleEmail" value={ email } onChange={ (event) => { setEmail(event.target.value) }  } placeholder="with a placeholder" />
+         
+              <Input type="email" name="email" id="exampleEmail" value={ email } onChange={ (event) => { setEmail(event.target.value) }  } placeholder="Email" />
             </FormGroup>
      
          
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input type="password" value={ pass } onChange={ (event) => { setPass(event.target.value) }  } name="password" id="examplePassword" placeholder="password placeholder" />
+             
+              <Input type="password" value={ pass } onChange={ (event) => { setPass(event.target.value) }  } name="password" id="examplePassword" placeholder="Password in integer" />
             </FormGroup>
         <FormGroup>
-          <Label for="Name">Name</Label>
+          
           <Input type="text" name="Name" width={"10px"} value={Name} onChange={ (event) => { setName(event.target.value) }  }  placeholder="Name"/>
         </FormGroup>
        
@@ -83,7 +78,7 @@ function Addusers(props) {
         </Input>
       </FormGroup>
        
-        <button className="btn btn-danger" type="submit"> Submit </button>
+        <button className="btn btn-danger center " type="submit"> Submit </button>
         
       
 

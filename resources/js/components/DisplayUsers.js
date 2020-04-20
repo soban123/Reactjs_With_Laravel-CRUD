@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Table } from 'reactstrap';
 
-
+import './table.css'
 class  Users  extends React.Component {
 
     constructor(props){
@@ -52,13 +51,11 @@ render(){
          } )  ;
 
     return ( this.state.loaded ? 
-        <div >
-            <br></br>
-            <br></br><br></br>
-            <br></br>
+        <div className="table-class"  >
+       
 
             <h1> Users </h1>
-            <Table >
+            <Table  >
   
   <tr>
     <th>id</th>
